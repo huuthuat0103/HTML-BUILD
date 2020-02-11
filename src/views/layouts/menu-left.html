@@ -1,0 +1,163 @@
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <!-- <div class="user-panel">
+            <div class="pull-left image">
+                <a href="javascript:PopInfo({name:'gallery', cust_cd:'123456', gubn:'USER', file:''});">
+                    <img src="../resources/images/profile.png" class="img-circle" alt="사진" />
+                </a>
+                <script>
+                    $(".user-panel .image img").prop("src", setProfileDisplay("USER", "123456", "", true));
+                </script>
+            </div>
+            <div class="pull-left info" style="padding:5px 0 0 0;width:150px;left:80px;">
+                <p><small></small></p>
+                <p><small style="display: inline-block;"></small> 만년대리</p>
+            </div>
+            <a class="profile" href="javascript:PopInfo({name:'userInfo', cust_cd:'123456', gubn:'TEST'});">
+                <span class="fa-stack" style="color:white;">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-address-card-o fa-stack-1x text-primary"></i>
+        </span>
+            </a>
+        </div> -->
+        <ul class="sidebar-menu" data-widget="tree" data-accordion="false">
+            <li style="border-bottom:1px solid #3f3f3f;"><a href="./home.html"><i class="fa fa-home"></i> <span>문서관리</span></a></li>
+            <li class='treeview'><a href='/mes'><i class='fa fa-cogs'></i><span>MES</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                <ul class='treeview-menu'>
+                    <li class='treeview'><a href='/mes/base'><i class='fa fa-cog'></i><span>기준정보</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                        <ul class='treeview-menu'>
+                            <li><a href='/mes/base/company/list'><i class='fa fa-circle-o'></i><span>거래처정보</span></a></li>
+                            <li><a href='/mes/base/material/list'><i class='fa fa-circle-o'></i><span>자재정보</span></a></li>
+                            <li><a href='/mes/base/material/consign'><i class='fa fa-circle-o'></i><span>사급자재정보</span></a></li>
+                            <li><a href='/mes/base/process/list'><i class='fa fa-circle-o'></i><span>공정정보</span></a></li>
+                            <li><a href='/mes/base/equipment/list'><i class='fa fa-circle-o'></i><span>설비정보</span></a></li>
+                            <li><a href='/mes/base/instrument/list'><i class='fa fa-circle-o'></i><span>계측기정보</span></a></li>
+                            <li><a href='/mes/base/instrument/admin'><i class='fa fa-circle-o'></i><span>계측기관리자정보</span></a></li>
+                            <li><a href='/mes/base/notice/list'><i class='fa fa-circle-o'></i><span>공지관리</span></a></li>
+                            <li><a href='/mes/base/zero/list'><i class='fa fa-circle-o'></i><span>무재해현황</span></a></li>
+                            <ul class='treeview-menu'>
+                                <li><a href='/mes/base/product/assemble'><i class='fa fa-circle-o'></i><span>조립품정보</span></a></li>
+                                <li><a href='/mes/base/product/single'><i class='fa fa-circle-o'></i><span>단품정보</span></a></li>
+                                <li><a href='/mes/base/product/rev'><i class='fa fa-circle-o'></i><span>Rev정보</span></a></li>
+                                <li><a href='/mes/base/product/process'><i class='fa fa-circle-o'></i><span>제품공정정보</span></a></li>
+                                <li><a href='/mes/base/product/bom'><i class='fa fa-circle-o'></i><span>공정BOM정보</span></a></li>
+                                <li><a href='/mes/base/product/lot'><i class='fa fa-circle-o'></i><span>제품LOT추적</span></a></li>
+                                <li><a href='/mes/base/product/explosion'><i class='fa fa-circle-o'></i><span>BOM정전개</span></a></li>
+                            </ul>
+                    </li>
+                    <li class='treeview'><a href='/mes/sales'><i class='fa fa-play-circle'></i><span>영업관리</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                        <ul class='treeview-menu'>
+                            <li><a href='/mes/sales/contract/list'><i class='fa fa-circle-o'></i><span>수주관리</span></a></li>
+                            <li><a href='/mes/sales/contract/unship'><i class='fa fa-circle-o'></i><span>미납현황</span></a></li>
+                            <li><a href='/mes/sales/contract/order'><i class='fa fa-circle-o'></i><span>발주서비교</span></a></li>
+                            <li><a href='/mes/sales/ship/list'><i class='fa fa-circle-o'></i><span>출고관리</span></a></li>
+                            <li><a href='/mes/sales/ship/history'><i class='fa fa-circle-o'></i><span>출고내역</span></a></li>
+                            <li><a href='/mes/material/input/consign'><i class='fa fa-circle-o'></i><span>사급자재입고</span></a></li>
+                            <li><a href='/mes/sales/result/list'><i class='fa fa-circle-o'></i><span>영업실적</span></a></li>
+                        </ul>
+                    </li>
+                    <li class='treeview'><a href='/mes/production'><i class='fa fa-shopping-cart'></i><span>생산관리</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                        <ul class='treeview-menu'>
+                            <li><a href='/mes/production/plan/list'><i class='fa fa-circle-o'></i><span>생산계획</span></a></li>
+                            <li><a href='/mes/production/order/assemble'><i class='fa fa-circle-o'></i><span>조립품실적관리</span></a></li>
+                            <li><a href='/mes/production/order/single'><i class='fa fa-circle-o'></i><span>단품실적관리</span></a></li>
+                            <li><a href='/mes/production/order/rework'><i class='fa fa-circle-o'></i><span>추가작업관리</span></a></li>
+                            <li><a href='/mes/production/status/list'><i class='fa fa-circle-o'></i><span>생산현황</span></a></li>
+                            <li><a href='/mes/production/output/list'><i class='fa fa-circle-o'></i><span>작업내역</span></a></li>
+                            <li><a href='/mes/production/order/subwork'><i class='fa fa-circle-o'></i><span>서브작업관리</span></a></li>
+                        </ul>
+                    </li>
+                    <li class='treeview'><a href='/mes/product'><i class='fa fa-tags'></i><span>단품관리</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                        <ul class='treeview-menu'>
+                            <li><a href='/mes/product/inout/single'><i class='fa fa-circle-o'></i><span>단품입출고현황</span></a></li>
+                            <li><a href='/mes/product/inventory/single'><i class='fa fa-circle-o'></i><span>단품재고현황</span></a></li>
+                        </ul>
+                    </li>
+                    <li class='treeview'><a href='/mes/material'><i class='fa fa-th-list'></i><span>자재관리</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                        <ul class='treeview-menu'>
+                            <li><a href='/mes/material/purchase/list'><i class='fa fa-circle-o'></i><span>매입관리</span></a></li>
+                            <li><a href='/mes/material/back/list'><i class='fa fa-circle-o'></i><span>반품관리</span></a></li>
+                            <li><a href='/mes/material/inout/list'><i class='fa fa-circle-o'></i><span>입출고현황</span></a></li>
+                            <li><a href='/mes/material/inventory/list'><i class='fa fa-circle-o'></i><span>재고현황</span></a></li>
+                            <li><a href='/mes/material/inout/consign'><i class='fa fa-circle-o'></i><span>사급입출고현황</span></a></li>
+                            <li><a href='/mes/material/inventory/consign'><i class='fa fa-circle-o'></i><span>사급재고현황</span></a></li>
+                            <li><a href='/mes/material/history/list'><i class='fa fa-circle-o'></i><span>이력조회</span></a></li>
+                            <li><a href='/mes/material/result/list'><i class='fa fa-circle-o'></i><span>매입실적</span></a></li>
+                        </ul>
+                    </li>
+                    <li class='treeview'><a href='/mes/quality'><i class='fa fa-quora'></i><span>품질관리</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                        <ul class='treeview-menu'>
+                            <li><a href='/mes/quality/item/receive'><i class='fa fa-circle-o'></i><span>수입검사항목</span></a></li>
+                            <li><a href='/mes/quality/item/self'><i class='fa fa-circle-o'></i><span>공정검사항목</span></a></li>
+                            <li><a href='/mes/sales/back/list'><i class='fa fa-circle-o'></i><span>영업반품관리</span></a></li>
+                        </ul>
+                    </li>
+                    <li class='treeview'><a href='/mes/lab'><i class='fa fa-address-book-o'></i><span>연구소</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                        <ul class='treeview-menu'>
+                            <li><a href='/mes/quality/item/ship'><i class='fa fa-circle-o'></i><span>출고검사항목</span></a></li>
+                            <li><a href='/mes/quality/receive/list'><i class='fa fa-circle-o'></i><span>수입검사관리</span></a></li>
+                            <li><a href='/mes/quality/self/list'><i class='fa fa-circle-o'></i><span>공정검사관리</span></a></li>
+                            <li><a href='/mes/quality/self/admin'><i class='fa fa-circle-o'></i><span>관리자공정검사</span></a></li>
+                            <li><a href='/mes/quality/ship/list'><i class='fa fa-circle-o'></i><span>출고검사관리</span></a></li>
+                            <li><a href='/mes/quality/fail/list'><i class='fa fa-circle-o'></i><span>불량실적관리</span></a></li>
+                            <li><a href='/mes/quality/measure/list'><i class='fa fa-circle-o'></i><span>자재대책서관리</span></a></li>
+                            <li><a href='/mes/quality/instrument/list'><i class='fa fa-circle-o'></i><span>계측기관리</span></a></li>
+                        </ul>
+                    </li>
+                    <li class='treeview'><a href='/mes/report'><i class='fa fa-bar-chart'></i><span>보고서</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                        <ul class='treeview-menu'>
+                            <li class='treeview'><a href='/mes/report/sales'><i class='fa fa-circle-o'></i><span>영업보고서</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                                <ul class='treeview-menu'>
+                                    <li><a href='/mes/report/sales/view1'><i class='fa fa-circle-o'></i><span>거래처별 수주/납품</span></a></li>
+                                    <li><a href='/mes/report/sales/view2'><i class='fa fa-circle-o'></i><span>조립품리드타임</span></a></li>
+                                </ul>
+                            </li>
+                            <li class='treeview'><a href='/mes/report/production'><i class='fa fa-circle-o'></i><span>생산보고서</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                                <ul class='treeview-menu'>
+                                    <li><a href='/mes/report/production/view1'><i class='fa fa-circle-o'></i><span>생산성</span></a></li>
+                                    <li><a href='/mes/report/production/view2'><i class='fa fa-circle-o'></i><span>비가동시간</span></a></li>
+                                    <li><a href='/mes/report/production/view3'><i class='fa fa-circle-o'></i><span>조립품리드타임</span></a></li>
+                                    <li><a href='/mes/report/production/view4'><i class='fa fa-circle-o'></i><span>작업자별작업시간</span></a></li>
+                                </ul>
+                            </li>
+                            <li class='treeview'><a href='/mes/report/inventory'><i class='fa fa-circle-o'></i><span>재고보고서</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                                <ul class='treeview-menu'>
+                                    <li><a href='/mes/report/inventory/view1'><i class='fa fa-circle-o'></i><span>자재</span></a></li>
+                                    <li><a href='/mes/report/inventory/view2'><i class='fa fa-circle-o'></i><span>단품</span></a></li>
+                                </ul>
+                            </li>
+                            <li class='treeview'><a href='/mes/report/quality'><i class='fa fa-circle-o'></i><span>품질보고서</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                                <ul class='treeview-menu'>
+                                    <li><a href='/mes/report/quality/view1'><i class='fa fa-circle-o'></i><span>수입검사</span></a></li>
+                                    <li><a href='/mes/report/quality/view2'><i class='fa fa-circle-o'></i><span>공정검사</span></a></li>
+                                    <li><a href='/mes/report/quality/view3'><i class='fa fa-circle-o'></i><span>출고검사</span></a></li>
+                                </ul>
+                            </li>
+                            <li class='treeview'><a href='/mes/report/cost'><i class='fa fa-circle-o'></i><span>원가보고서</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                                <ul class='treeview-menu'>
+                                    <li><a href='/mes/report/cost/view1'><i class='fa fa-circle-o'></i><span>원가</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>
+            </li>
+            <li class='treeview'><a href='/board'><i class='fa fa-bullhorn'></i><span>게시판</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                <ul class='treeview-menu'>
+                    <li><a href='/board/list?bomn_cd=8100'><i class='fa fa-file-text-o'></i><span>사내게시판</span></a></li>
+                </ul>
+            </li>
+            <li class='treeview'><a href='/admin'><i class='fa fa-cog'></i><span>시스템관리</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a>
+                <ul class='treeview-menu'>
+                    <li><a href='/admin/menu'><i class='fa fa-bars'></i><span>메뉴관리</span></a></li>
+                    <li><a href='/admin/auth'><i class='fa fa-key'></i><span>권한관리</span></a></li>
+                    <li><a href='/admin/dept'><i class='fa fa-bullhorn'></i><span>부서관리</span></a></li>
+                    <li><a href='/admin/grad'><i class='fa fa-sitemap'></i><span>직급관리</span></a></li>
+                    <li><a href='/admin/user'><i class='fa fa-window-maximize'></i><span>인사관리</span></a></li>
+                </ul>
+            </li>
+
+            <li style="border-bottom:1px solid #3f3f3f;"><a href="/user/logout"><i class="fa fa-sign-out"></i> <span>로그아웃</span></a></li>
+            </ul>
+    </section>
+</aside>

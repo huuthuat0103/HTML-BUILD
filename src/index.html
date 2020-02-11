@@ -2,42 +2,103 @@
 <html lang="en">
 <head>
   <!-- include head.html -->
-  <title>HTML Boilerplate</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
-<!-- favicon -->
-<link href="images/favicon.ico" type="image/x-icon" rel="icon">
-<!-- meta social -->
-<meta name="twitter:card" content="" />
-<meta name="twitter:site" content="" />
-<meta name="twitter:creator" content="" />
-<meta property="og:description" content="" />
-<meta property="og:image" content="" />
-<meta property="og:site_name" content="">
-<meta property="og:title" content="" />
-<meta property="og:type" content="">
-<meta property="og:url" content="" />
-<!-- Google Font -->
+  <meta charset="UTF-8">
+    <title>A Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="shortcut icon" href="../resources/images/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+
+    <link rel="stylesheet" href="../resources/plugins/datatables/datatables.css" />
+    <!-- sort 이미지를 변경하기 위해 수정함 -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.10/css/AdminLTE.min.css" />
+
+    <link rel="stylesheet" href="../resources/common/all-skins.css" />
+    <link rel="stylesheet" href="../resources/common/display.css" />
+    <link rel="stylesheet" href="../resources/common/common.css" />
+
+    <!--[if lt IE 9]
+	       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	       <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	   <![endif]-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/locale/ko.js"></script>
+
+    <script src="../resources/common/skins.js"></script>
+    <script src="../resources/common/common.js"></script>
   <!-- include styles.html -->
-  <!-- build:css(.) style/vendor.min.css -->
-<link rel="stylesheet" type="text/css" media="screen" href="node_modules/bootstrap/dist/css/bootstrap.css" />
-<!-- endbuild -->
-<!-- build:css(.tmp) style/style.min.css -->
-<link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
-<!-- endbuild -->
+  <meta charset="UTF-8">
+    <title>A Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="shortcut icon" href="../resources/images/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+
+    <link rel="stylesheet" href="../resources/plugins/datatables/datatables.css" />
+    <!-- sort 이미지를 변경하기 위해 수정함 -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.10/css/AdminLTE.min.css" />
+
+    <link rel="stylesheet" href="../src/common/all-skins.css" />
+    <link rel="stylesheet" href="../src/common/display.css" />
+    <link rel="stylesheet" href="../src/common/common.css" />
+    <link rel="stylesheet" href="./../../styles/main.scss" />
+
+    <!--[if lt IE 9]
+	       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	       <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	   <![endif]-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/locale/ko.js"></script>
+
+    <script src="../src/common/skins.js"></script>
+    <script src="../src/common/common.js"></script>
 </head>
 <body>
   <div class="wrapper">
     <!-- include header.html -->
-    <header class="header-container">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <p>Header Container</p>
+    <header class="main-header">
+  <a href="/" class="logo hidden-xs">
+      <span class="logo-lg"><b>Blue-Biz Self FAC</b></span>
+  </a>
+  <nav class="navbar navbar-static-top" role="navigation">
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </a>
+      <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+              <li>
+                  <a href="/">
+                      <i class="fa fa-calendar-o"></i>
+                      <strong style="padding-left:5px;font-size:16px;">02 / 11 (Tue)</strong>
+                      <strong style="padding-left:5px;font-size:16px;" id="currentTime">00 : 00</strong>
+                  </a>
+              </li>
+          </ul>
       </div>
-    </div>
-  </div>
+  </nav>
 </header>
 
     <!-- include banner.html -->
@@ -74,12 +135,23 @@
   </div>
 
   <!-- include scripts.html -->
-  <!-- build:js(.) script/vendor.min.js -->
-<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-<!-- endbuild -->
-<!-- build:js script/script.min.js -->
-<script type="text/javascript" src="scripts/script.js"></script>
-<!-- endbuild -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script src="../resources/plugins/datatables/datatables.min.js"></script>
+<script src="../resources/plugins/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
+<!-- 한글나오도록 커스터마이징된걸로 바꿈 -->
+<script src="../resources/plugins/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+<!-- 한글나오도록 커스터마이징된걸로 바꿈 -->
+
+<script src="../resources/plugins/datatables/datatables.rowsGroup.min.js"></script>
+
+<script src="../resources/plugins/parsley/parsley.min.js"></script>
+<script src="../resources/plugins/parsley/parsley-extension-init.js"></script>
+<script src="../resources/plugins/parsley/i18n/ko.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/i18n/defaults-ko_KR.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.10/js/adminlte.min.js"></script>
 </body>
 </html>

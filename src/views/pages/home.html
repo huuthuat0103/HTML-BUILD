@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    @@include('../layouts/styles.html')
+</head>
+
+<body class="skin-01 sidebar-mini hold-transition" style="overflow: auto;">
+    <script>
+        setupSkin();
+    </script>
+    <div class="wrapper">
+
+        @@include('../layouts/header.html')
+
+        <style>
+            .user-panel {
+                height: 65px;
+            }
+            
+            .user-panel .profile {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 5px 5px;
+            }
+            
+            .user-panel .image img {
+                width: 44px;
+                height: 44px;
+                object-fit: cover;
+                object-position: bottom;
+                border-radius: 50%;
+                margin-left: 10px;
+            }
+            
+            .sidebar-collapse .user-panel .profile {
+                display: none;
+            }
+            
+            .sidebar-collapse .user-panel {
+                height: 50px;
+            }
+            
+            .sidebar-collapse .user-panel .image img {
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+                object-position: bottom;
+                border-radius: 50%;
+                margin-left: 0;
+            }
+        </style>
+        
+        @@include('../layouts/menu-left.html')
+
+        <div class="content-wrapper">
+
+            <section class="content-header">
+                <h1 style="padding-left:10px;">
+		<i class='fa fa-home'></i>
+		<span id="headerPageName">HOME</span>
+	</h1>
+                <ol class="breadcrumb hidden-sm">
+                    <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+                </ol>
+            </section>
+
+            <div class="col-xs-12">
+                <hr class="content-border" />
+            </div>
+
+            <style>
+                .title>a {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid #fff;
+                    line-height: 36px;
+                }
+                
+                .title>p {
+                    width: 65%;
+                    font-size: 2.1em;
+                    text-align: center;
+                    display: inline-block;
+                }
+                
+                .wideT {
+                    background-color: #f5f5f5;
+                    width: 99%;
+                    margin: 10px 0;
+                    border-top: 2px solid #666;
+                    border-bottom: 1px solid #666;
+                    margin: 5px auto;
+                }
+                
+                .wideT.caren th {
+                    font-weight: normal;
+                    width: 100px;
+                    font-size: 1.2em;
+                    text-align: center;
+                }
+                
+                .wideT th:first-of-type,
+                .wideT td:first-of-type {
+                    border-left: none;
+                }
+                
+                .wideT th {
+                    background-color: #f5f5f5;
+                    padding: 5px 0;
+                    color: #373737;
+                    border-bottom: 1px solid #ccc;
+                }
+                
+                .wideT.caren td {
+                    vertical-align: top;
+                    padding-bottom: 2px;
+                }
+                
+                .wideT th:first-of-type,
+                .wideT td:first-of-type {
+                    border-left: none;
+                }
+                
+                .wideT td {
+                    padding: 7px;
+                    background-color: #FFF;
+                    border-bottom: 1px solid #ddd;
+                    border-right: 1px solid #ddd;
+                }
+                
+                table.type03 th {
+                    height: 40px;
+                    text-align: center;
+                    color: #222222;
+                    border-top: 2px solid #666666;
+                    border-bottom: 1px solid #d1d1d1;
+                    background-color: #f8f8f8;
+                }
+                
+                .table-scroll th,
+                .table-scroll td {
+                    padding: 0 10px;
+                    background: #fff;
+                    white-space: nowrap;
+                }
+                
+                .red {
+                    color: red !important;
+                    font-weight: bold;
+                }
+                
+                .border-left {
+                    border-left: 1px solid #666 !important;
+                }
+                
+                table.type03 td {
+                    height: 38px;
+                    text-align: center;
+                    color: #555555;
+                    border: 1px solid #d1d1d1;
+                }
+                
+                .table-scroll th,
+                .table-scroll td {
+                    padding: 0 10px;
+                    background: #fff;
+                    white-space: nowrap;
+                }
+                
+                .border-top-none {
+                    border-top: none !important;
+                }
+            </style>
+
+            <section class="content overlay-wrapper">
+                <div class="overlay">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+                <form name="searchForm" id="searchForm" method="get">
+                    <input type="hidden" name="year" value="" />
+                    <input type="hidden" name="month" value="" />
+                </form>
+                <div style="margin-bottom: 30px;">
+                    <div class="title" style="border: 1px; float: left; width: calc(60% - 20px); padding:10px; text-align:center;">
+                        <a href="#none" onclick="goCal('2020','1');"><img alt="이전" src="../resources/images/day_prev.png"></a>
+                        <p><b>2020</b>년 <b>2</b>월<b> &nbsp;조립품 생산계획 대비 실적</b></p>
+                        <a href="#none" onclick="goCal('2020','3');"><img alt="다음" src="../resources/images/day_next.png"></a>
+                    </div>
+                    <table class="wideT caren" border="0" cellspacing="1" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th scope="col">월</th>
+                                <th scope="col">화</th>
+                                <th scope="col">수</th>
+                                <th scope="col">목</th>
+                                <th scope="col">금</th>
+                                <th class="blue" scope="col">토</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td class="b4_day"></td>
+
+                                <td class="b4_day"></td>
+
+                                <td class="b4_day"></td>
+
+                                <td class="b4_day"></td>
+
+                                <td class="b4_day"></td>
+
+                                <td id="2020_2_1">
+                                    <strong class="blue b4_day">
+							1
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td id="2020_2_3">
+                                    <strong class="b4_day">
+							3
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_4">
+                                    <strong class="b4_day">
+							4
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_5">
+                                    <strong class="b4_day">
+							5
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_6">
+                                    <strong class="b4_day">
+							6
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_7">
+                                    <strong class="b4_day">
+							7
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_8">
+                                    <strong class="blue b4_day">
+							8
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td id="2020_2_10">
+                                    <strong class="b4_day">
+							10
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_11">
+                                    <strong class="b4_day">
+							11
+
+							<img src="../resources/images/ico_2day.gif">
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_12">
+                                    <strong class="b4_day">
+							12
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_13">
+                                    <strong class="b4_day">
+							13
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_14">
+                                    <strong class="b4_day">
+							14
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_15">
+                                    <strong class="blue b4_day">
+							15
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td id="2020_2_17">
+                                    <strong class="b4_day">
+							17
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_18">
+                                    <strong class="b4_day">
+							18
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_19">
+                                    <strong class="b4_day">
+							19
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_20">
+                                    <strong class="b4_day">
+							20
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_21">
+                                    <strong class="b4_day">
+							21
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_22">
+                                    <strong class="blue b4_day">
+							22
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td id="2020_2_24">
+                                    <strong class="b4_day">
+							24
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_25">
+                                    <strong class="b4_day">
+							25
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_26">
+                                    <strong class="b4_day">
+							26
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_27">
+                                    <strong class="b4_day">
+							27
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_28">
+                                    <strong class="b4_day">
+							28
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_29">
+                                    <strong class="blue b4_day">
+							29
+
+						</strong>
+                                    <ul class='reList'>
+
+                                    </ul>
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <div class="title" style="border: 1px; float: left; width: calc(60% - 20px); padding:10px; text-align:center;">
+                        <a href="#none" onclick="goCal('2020','1');"><img alt="이전" src="../resources/images/day_prev.png"></a>
+                        <p><b>2020</b>년 <b>2</b>월<b> &nbsp;납기 계획표</b></p>
+                        <a href="#none" onclick="goCal('2020','3');"><img alt="다음" src="../resources/images/day_next.png"></a>
+                    </div>
+                    <table class="wideT caren" border="0" cellspacing="1" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th scope="col">월</th>
+                                <th scope="col">화</th>
+                                <th scope="col">수</th>
+                                <th scope="col">목</th>
+                                <th scope="col">금</th>
+                                <th class="blue" scope="col">토</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td class="b4_day"></td>
+
+                                <td class="b4_day"></td>
+
+                                <td class="b4_day"></td>
+
+                                <td class="b4_day"></td>
+
+                                <td class="b4_day"></td>
+
+                                <td id="2020_2_1">
+                                    <strong class="blue b4_day">
+							1
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td id="2020_2_3">
+                                    <strong class="b4_day">
+							3
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_4">
+                                    <strong class="b4_day">
+							4
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_5">
+                                    <strong class="b4_day">
+							5
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_6">
+                                    <strong class="b4_day">
+							6
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_7">
+                                    <strong class="b4_day">
+							7
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_8">
+                                    <strong class="blue b4_day">
+							8
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td id="2020_2_10">
+                                    <strong class="b4_day">
+							10
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_11">
+                                    <strong class="b4_day">
+							11
+
+							<img src="../resources/images/ico_2day.gif">
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_12">
+                                    <strong class="b4_day">
+							12
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_13">
+                                    <strong class="b4_day">
+							13
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_14">
+                                    <strong class="b4_day">
+							14
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_15">
+                                    <strong class="blue b4_day">
+							15
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td id="2020_2_17">
+                                    <strong class="b4_day">
+							17
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_18">
+                                    <strong class="b4_day">
+							18
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_19">
+                                    <strong class="b4_day">
+							19
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_20">
+                                    <strong class="b4_day">
+							20
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_21">
+                                    <strong class="b4_day">
+							21
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_22">
+                                    <strong class="blue b4_day">
+							22
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td id="2020_2_24">
+                                    <strong class="b4_day">
+							24
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_25">
+                                    <strong class="b4_day">
+							25
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_26">
+                                    <strong class="b4_day">
+							26
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_27">
+                                    <strong class="b4_day">
+							27
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_28">
+                                    <strong class="b4_day">
+							28
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                                <td id="2020_2_29">
+                                    <strong class="blue b4_day">
+							29
+
+						</strong>
+                                    <ul class='reList'>
+                                        <li>
+                                            <span>미납:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:red;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>예정:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;">0건</span>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span>완료:</span>
+                                            <span style="float: right;">
+									<span style="font-weight: bold;color:blue;">0건</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <div class="title" style="border: 1px; float: left; width: calc(60% - 20px); padding:10px; text-align:center;">
+                        <p><b>공정별재공현황</b></p>
+                    </div>
+                    <div class="table-scroll">
+                        <div class="table-wrap">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="type03" id="tbList">
+                                <thead>
+                                    <tr>
+                                        <th class="fixed-side"></th>
+                                        <th colspan="2" class="border-left red">출고예정일지연</th>
+                                        <th colspan="2" class="border-left orange">출고예정일5일이내</th>
+                                        <th colspan="2" class="border-left blue">출고예정일10일이내</th>
+                                        <th colspan="2" class="border-left">합계</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="border-top-none border-bottom fixed-side"></th>
+                                        <th class="border-top-none border-bottom border-left red">품목수</th>
+                                        <th class="border-top-none border-bottom red">표준공수</th>
+                                        <th class="border-top-none border-bottom border-left orange">품목수</th>
+                                        <th class="border-top-none border-bottom orange">표준공수</th>
+                                        <th class="border-top-none border-bottom border-left blue">품목수</th>
+                                        <th class="border-top-none border-bottom blue">표준공수</th>
+                                        <th class="border-top-none border-bottom border-left">품목수</th>
+                                        <th class="border-top-none border-bottom">표준공수</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="border-top-none border-bottom fixed-side">합계</th>
+                                        <td class="border-bottom border-left red bold">
+                                            <div class="text-right" id="tot_outturncnt"></div>
+                                        </td>
+                                        <td class="border-bottom red bold">
+                                            <div class="text-right" id="tot_outturnman"></div>
+                                        </td>
+                                        <td class="border-bottom border-left orange bold">
+                                            <div class="text-right" id="tot_day5cnt"></div>
+                                        </td>
+                                        <td class="border-bottom orange bold">
+                                            <div class="text-right" id="tot_day5man"></div>
+                                        </td>
+                                        <td class="border-bottom border-left blue bold">
+                                            <div class="text-right" id="tot_day10cnt"></div>
+                                        </td>
+                                        <td class="border-bottom blue bold">
+                                            <div class="text-right" id="tot_day10man"></div>
+                                        </td>
+                                        <td class="border-bottom border-left bold">
+                                            <div class="text-right" id="tot_cnt"></div>
+                                        </td>
+                                        <td class="border-bottom bold">
+                                            <div class="text-right" id="tot_man"></div>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Modal -->
+            <div id="popPrevModal" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">REV정보</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="popPrevForm" name="popPrevForm" method="post">
+                                <div class="table-responsive">
+                                    <table id="popPrevList" class="table typeList">
+                                        <!-- <colgroup>
+								<col style="width:6%" />
+								<col style="width:12%" />
+								<col style="width:35%" />
+								<col style="width:20%" />
+								<col style="width:8%" />
+								<col style="width:8%" />
+								<col style="width:12%" />
+							</colgroup> -->
+                                        <thead>
+                                            <tr>
+                                                <th>상세기종</th>
+                                                <th>Rev No</th>
+                                                <th>변경일</th>
+                                                <th>EO.NO</th>
+                                                <th>비고</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+            <script id="popPrevTemplate" type="text/x-handlebars-template">
+                <tr class="row_{{numb}}">
+                    <td>
+                        {{pmok_sub_group_nm}}
+                    </td>
+                    <td>
+                        {{prev_no}}
+                    </td>
+                    <td>
+                        {{prev_dt}}
+                    </td>
+                    <td>
+                        {{prev_eo_no}}
+                    </td>
+                    <td class="text-left">
+                        {{prev_nt}}
+                    </td>
+                </tr>
+            </script>
+
+            <script type="text/javascript">
+                $(function() {
+                    var tot_outturncnt = 0,
+                        tot_outturnman = 0,
+                        tot_day5cnt = 0,
+                        tot_day5man = 0,
+                        tot_day10cnt = 0,
+                        tot_day10man = 0,
+                        tot_cnt = 0,
+                        tot_man = 0;
+
+                    $("#tot_outturncnt").html(tot_outturncnt.comma());
+                    $("#tot_outturnman").html(tot_outturnman.comma());
+                    $("#tot_day5cnt").html(tot_day5cnt.comma());
+                    $("#tot_day5man").html(tot_day5man.comma());
+                    $("#tot_day10cnt").html(tot_day10cnt.comma());
+                    $("#tot_day10man").html(tot_day10man.comma());
+                    $("#tot_cnt").html(tot_cnt.comma());
+                    $("#tot_man").html(tot_man.comma());
+
+                    // -30 ~ +30일 사이 변경된 REV 정보출력
+                    if ("1" > 0) {
+                        $("#popPrevList tbody").html("");
+                        $("#popPrevModal").modal("show");
+
+                        var source = $("#popPrevTemplate").html();
+                        var popPrevTemplate = Handlebars.compile(source);
+
+                        var inner = {
+                            pmok_sub_group_nm: "T394SHUSM",
+                            prev_no: "A",
+                            prev_dt: moment("2020-01-13").format("YYYY-MM-DD"),
+                            prev_eo_no: "",
+                            prev_nt: ""
+                        };
+
+                        $("#popPrevList tbody").append(popPrevTemplate(inner));
+
+                    }
+
+                    $(".overlay").hide();
+                });
+
+                function goCal(val, val2) {
+                    var frm = document.searchForm;
+
+                    frm.year.value = val;
+                    frm.month.value = val2;
+
+                    frm.action = "/";
+                    frm.submit();
+                }
+            </script>
+
+        </div>
+        <!-- ./content-wrapper -->
+        <footer class="main-footer text-center">
+            <strong>COPYRIGHT ⓒ <a href="http://www.blue-biz.co.kr/" target="_blank"> BLUEBIZ CO.,LTD.</a> ALL RIGHTS RESERVED.</strong>
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- Bootstrap Modal 때문에 z-index 입력함 -->
+    <div class="layer-wrapper" style="z-index:10000;">
+        <div class="bg"></div>
+        <div id="pop-layer" class="pop-layer">
+            <div id="dialog"></div>
+        </div>
+    </div>
+
+    <!-- 모든 페이지에 적용되는 script -->
+    <script>
+        var pageStartTime; // 진흥기계 : 10분간 입력 없을 경우 자동로그아웃 기능을 위해서..
+        $(function() {
+            /* form 태그 안에 input이 하나만 있을 때 Enter키 입력되면 submit 실행되는 거 막음 */
+            $(document)
+                .on("keydown", function(event) {
+                    if (event.keyCode == 13 && event.target.tagName != "TEXTAREA") {
+                        event.preventDefault();
+                    }
+                })
+                .on("keyup", function(event) {
+                    if (event.keyCode == 13 || event.keyCode == 38 || event.keyCode == 40) {
+                        if (event.target.tagName != "TEXTAREA" && event.target.className != "btn dropdown-toggle btn-default" && event.target.className != "inner open") {
+                            fnMoveFocus(event);
+                        }
+                    }
+                });
+
+            // 초기화
+            pageStartTime = moment();
+            showClock();
+
+            initDatepickerByClass("datepicker");
+            initStartEndDatepicker("startDate", "endDate");
+
+            $(".selectpicker").selectpicker();
+
+            $("input[type=text]")
+                .prop("autocomplete", "off") // chrome에서 이전에 사용한 cache가 남아있다.. 
+                .on("click", function(event) {
+                    $(this).select();
+                })
+                .on("keyup", function(event) {
+                    // 엔터 값 입력 시 $(document).on("keyup") 호출 안되도록.. 중요!!
+                    event.stopPropagation();
+
+                    // 초기화
+                    pageStartTime = moment();
+
+                    // 왼쪽, 오른쪽은 제외 : input 내 커서 이동을 위해.. 중요!!
+                    if (event.keyCode == 13 || event.keyCode == 38 || event.keyCode == 40) {
+                        fnMoveFocus(event);
+                    }
+                });
+
+            $("input[name$='_cost'], input[name$='_qty'], input[name$='_amt']")
+                .css("text-align", "right")
+                .on("click", function(event) {
+                    $(this).select();
+                })
+                .on("keyup", function(event) {
+                    $(this).val($(this).val().comma("p3"));
+                })
+                .on("blur", function(event) {
+                    $(this).val($(this).val().comma("p3"));
+                });
+
+            var sc_pos = 0;
+            $("#sc-up").click(function() {
+                $("html").scrollTop(sc_pos - 300);
+                sc_pos = $(document).scrollTop();
+            });
+
+            $("#sc-dw").click(function() {
+                $("html").scrollTop(sc_pos + 300);
+                sc_pos = $(document).scrollTop();
+            });
+
+            $("ul.sidebar-menu a").filter(function(event) {
+                if (location.pathname.indexOf("/board/list") != -1 || location.pathname.indexOf("/board/form") != -1 || location.pathname.indexOf("/board/view") != -1) {
+                    return this.href == (location.origin + "/board/list?bomn_cd=" + getUrlVars()["bomn_cd"]);
+                } else if (location.pathname.indexOf("/gw/project/main") != -1 || location.pathname.indexOf("/gw/project/work") != -1) {
+                    return this.href == (location.origin + "/gw/project/main/list");
+                } else {
+                    return this.href == (location.origin + location.pathname);
+                }
+            }).parent().removeClass("active").end().addClass("active");
+
+            $("ul.treeview-menu a").filter(function() {
+                if (location.pathname.indexOf("/board/list") != -1 || location.pathname.indexOf("/board/form") != -1 || location.pathname.indexOf("/board/view") != -1) {
+                    return this.href == (location.origin + "/board/list?bomn_cd=" + getUrlVars()["bomn_cd"]);
+                } else if (location.pathname.indexOf("/gw/project/main") != -1 || location.pathname.indexOf("/gw/project/work") != -1) {
+                    return this.href == (location.origin + "/gw/project/main/list");
+                } else {
+                    return this.href == (location.origin + location.pathname);
+                }
+            }).parentsUntil(".sidebar-menu").siblings().removeClass("active menu-open").end().addClass("active menu-open");
+        });
+
+        // GET방식의 url에서 parameter 값 가져오기
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(part, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        function goCheck() {
+            if (typeof(getPage) !== "undefined") {
+                getPage();
+            } else {
+                goSubmit();
+            }
+        }
+
+        function goSubmit() {
+            if (ChkIsNotNull(arguments[0])) {
+                var comSubmit = new ComSubmit(arguments[0].form);
+                comSubmit.setUrl(ChkIsNull(arguments[0].url) ? "/" : arguments[0].url);
+                comSubmit.setMethod(arguments[0].method);
+                if (ChkIsNotNull(arguments[1])) {
+                    $.each(arguments[1], function(key, val) {
+                        comSubmit.addParam(key, val);
+                    });
+                }
+                comSubmit.submit();
+            } else {
+                // searchForm을 기준으로 연결됨
+                var comSubmit = new ComSubmit();
+                comSubmit.setUrl("/");
+                comSubmit.submit();
+            }
+
+            return false;
+        }
+
+        //arguments를 이용하여 사용
+        function setDataTables() {
+            var orderIdx = arguments[0].orderIdx;
+            var orderGubn = arguments[0].orderGubn;
+
+            var isCheck = true;
+            if (Array.isArray(orderGubn) == false) {
+                isCheck = false;
+            } else if (orderIdx.length != orderGubn.length) {
+                alert("orderGubn이 Array일 때 orderIdx와 orderGubn 길이는 같아야 합니다.\n테이블에 DataTables는 적용되지 않습니다.");
+                return false;
+            }
+
+            var orderArray = [];
+            if (ChkIsNotNull(orderIdx)) {
+                $.each(arguments[0].orderIdx, function(index, item) {
+                    var array = [];
+                    array.push(item);
+                    array.push(isCheck ? orderGubn[index] : orderGubn);
+                    orderArray.push(array);
+                });
+            }
+
+            var scrollY = ChkIsNull(arguments[0].scrollY) ? "" : arguments[0].scrollY + "px";
+            var lengthMenu = ChkIsNull(arguments[0].lengthMenu) ? [10, 25, 50, 100] : arguments[0].lengthMenu;
+
+            var $dataTable = $("#" + arguments[0].tableID).DataTable({
+                buttons: [{
+                    extend: "excelHtml5",
+                    title: "",
+                    filename: "HOME_" + moment().locale("ko").format("YYYY-MM-DD_HHmmss")
+                }, {
+                    extend: "pdfHtml5",
+                    title: "",
+                    filename: "HOME_" + moment().locale("ko").format("YYYY-MM-DD_HHmmss")
+                }],
+                fixedHeader: true,
+                rowId: "test",
+                paging: arguments[0].paging // PagedListHolder 사용하지 않고 이걸 사용함
+                    ,
+                pageLength: arguments[0].pageLength // Page 당 item 개수
+                    ,
+                info: arguments[0].info // List 페이지 정보 (전체페이지 중 몇 페이지...)
+                    ,
+                filter: arguments[0].filter // List 내 search 기능
+                    ,
+                ordering: arguments[0].ordering // List 내 sort 기능
+                    ,
+                order: orderArray // order 초기화, 필드 순서 0부터 시작.., ** stateSave: true 시 의미가 없어짐...
+                    ,
+                rowsGroup: arguments[0].rowspan // List 내 rowspan 적용 필드 지정
+                    ,
+                stateSave: arguments[0].stateSave // Sorting 옵션 저장
+                    ,
+                stateLoadParams: function(settings, data) { // stateSave: true일 때..
+                    //data.start = 0;						// paging 초기화
+                    //data.search.search = "";				// search 초기화
+                    data.order = orderArray; // stateSave true 시 적용됨, 이거와 동일 : order: [[0, "asc"]]	// 특정 필드
+                },
+                scrollY: scrollY // 스크롤바 높이 고정, 고정 시 colgroup 적용 필요...
+                    ,
+                scrollCollapse: arguments[0].collapse // List 개수에 따라 높이 조절됨
+                    ,
+                dom: "<'row-centered info-div'<'col-centered pull-left text-left w33'<'topLF'>Bf><'col-centered w34 field'><'col-centered pull-right text-right w33'li>><t><p>",
+                pagingType: "full_numbers",
+                lengthMenu: lengthMenu,
+                language: {
+                    lengthMenu: "_MENU_",
+                    zeroRecords: "<div class='text-center'>등록된 데이터가 없습니다.</div>",
+                    info: "<small>[현재 _START_ - _END_ / _TOTAL_건]</small>",
+                    infoEmpty: "",
+                    infoFiltered: "<small>( 재검색 : _TOTAL_개 )</small>",
+                    search: "<small>결과내 재검색 : </small>",
+                    paginate: {
+                        first: "<i class='fa fa-angle-double-left'></i>",
+                        previous: "<i class='fa fa-angle-left'></i>",
+                        next: "<i class='fa fa-angle-right'></i>",
+                        last: "<i class='fa fa-angle-double-right'></i>"
+                    }
+                }
+            });
+
+            // thead 값을 읽어와서 필드 Show / Hide를 설정함. 단, field_fixed 클래스는 고정임..
+            if (arguments[0].field) {
+                var text = "<select name='field-select' class='form-control selectpicker' title='항목선택' multiple data-header='항목 보기/숨기기' data-actions-box='true'>";
+                $.each($dataTable.columns()[0], function(index, item) {
+                    var column = $dataTable.column(item);
+                    if ($(column.header()).hasClass("field_fixed") == false) {
+                        if ($(column.header()).hasClass("field_hide")) {
+                            text += "<option value='" + item + "' data-column='" + item + "'>" + $(column.header()).text() + "</option>";
+                        } else {
+                            text += "<option value='" + item + "' data-column='" + item + "' selected='selected'>" + $(column.header()).text() + "</option>";
+                        }
+                    }
+                });
+
+                text += "</select>";
+
+                $("#" + arguments[0].tableID + "_wrapper div.field").html(text).css("width", "30%");
+
+                $("#" + arguments[0].tableID + "_wrapper select[name='field-select']").on('changed.bs.select', function(e, clickedIndex, isSelected, previousValue) {
+                    if (ChkIsNull(clickedIndex) && ChkIsNull(isSelected)) {
+                        if (ChkIsNull($(this).val())) { // 전체해제
+                            $.each($dataTable.columns()[0], function(index, item) {
+                                var column = $dataTable.column(item);
+                                if ($(column.header()).hasClass("field_fixed") == false) {
+                                    column.visible(false);
+                                }
+                            });
+                        } else { // 전체선택
+                            $.each($dataTable.columns()[0], function(index, item) {
+                                var column = $dataTable.column(item);
+                                column.visible(true);
+                            });
+                        }
+                    } else {
+                        var column = $dataTable.column($(e.target[clickedIndex]).data("column"));
+                        column.visible(isSelected);
+                    }
+                });
+
+                $.each($dataTable.columns()[0], function(index, item) {
+                    var column = $dataTable.column(item);
+                    if ($(column.header()).hasClass("field_hide")) {
+                        column.visible(false);
+                    } else {
+                        column.visible(true);
+                    }
+                });
+            }
+
+            var multiSelected = arguments[0].multiSelected;
+            if (arguments[0].selected) {
+                $("#" + arguments[0].tableID).on("click", "tr", function() {
+                    if (multiSelected) {
+                        $(this).toggleClass("selected");
+                    } else {
+                        if ($(this).hasClass("selected")) {
+                            $(this).removeClass("selected");
+                        } else {
+                            $dataTable.$("tr.selected").removeClass("selected");
+                            $(this).addClass("selected");
+                        }
+                    }
+                });
+            }
+
+            // dataTables에 scrollY 값을 부여하면 thead가 틀어짐.. dataTables에서 width 값을 기본 100px로 하고 있음
+            $(".dataTables_scrollHeadInner, .dataTables_scrollHeadInner .dataTable").css("width", "100%");
+        }
+
+        function setButtonTrigger() {
+            if ($.fn.DataTable.isDataTable("#" + arguments[0].tableID)) {
+                $("#" + arguments[0].tableID).DataTable().button(".buttons-" + arguments[0].btn).trigger();
+            }
+        }
+
+        function checkRegAuth(isAdmin) {
+            if ("" == "S") {
+                alert("해당 페이지의 [등록]권한이 부여되지 않았습니다.\n관리자에게 문의바랍니다.");
+                return false;
+            } else if (ChkIsNotNull(isAdmin)) {
+                if (isAdmin != "Y") {
+                    alert("관리자 권한이 부여된 사용자만 이용할 수 있습니다.");
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function setScope(scope) {
+            $(".scope-btn").removeClass("btn-skin").addClass("btn-default");
+            $(".scope-" + scope).removeClass("btn-default").addClass("btn-skin");
+
+            if (scope == "01") {
+                $("#scope-left").hide();
+                $("#scope-right").removeClass().addClass("col-sm-12").show();
+            } else if (scope == "12") {
+                $("#scope-left").removeClass().addClass("col-sm-4").show();
+                $("#scope-right").removeClass().addClass("col-sm-8").show();
+            } else if (scope == "23") {
+                $("#scope-left").removeClass().addClass("col-sm-5").show();
+                $("#scope-right").removeClass().addClass("col-sm-7").show();
+            } else if (scope == "33") {
+                $("#scope-left").removeClass().addClass("col-sm-6").show();
+                $("#scope-right").removeClass().addClass("col-sm-6").show();
+            } else if (scope == "32") {
+                $("#scope-left").removeClass().addClass("col-sm-7").show();
+                $("#scope-right").removeClass().addClass("col-sm-5").show();
+            } else if (scope == "21") {
+                $("#scope-left").removeClass().addClass("col-sm-8").show();
+                $("#scope-right").removeClass().addClass("col-sm-4").show();
+            } else if (scope == "10") {
+                $("#scope-left").removeClass().addClass("col-sm-12").show();
+                $("#scope-right").hide();
+            }
+
+            if ($.fn.DataTable.isDataTable("#tbList")) {
+                $("#tbList").DataTable().draw(false);
+            }
+            if ($.fn.DataTable.isDataTable("#frmStopList")) {
+                $("#frmStopList").DataTable().draw(false);
+            }
+            if ($.fn.DataTable.isDataTable("#frmLossList")) {
+                $("#frmLossList").DataTable().draw(false);
+            }
+        }
+
+        //toLocaleDateString, toLocaleTimeString, toLocaleString 참조할만 함
+        var isTickTock = false;
+
+        function showClock() {
+            var currentDate = new Date();
+            if (isTickTock) {
+                isTickTock = false;
+                $("#currentTime").html(pad(currentDate.getHours(), 2) + "<span style='display:inline-block;padding:0 5px;width:17px;'>:</span>" + pad(currentDate.getMinutes(), 2));
+            } else {
+                isTickTock = true;
+                $("#currentTime").html(pad(currentDate.getHours(), 2) + "<span style='display:inline-block;padding:0 5px;width:17px;'> </span>" + pad(currentDate.getMinutes(), 2));
+            }
+
+            var pageCurTime = moment();
+            setTimeout(showClock, 750);
+
+            var diff = moment.duration(pageCurTime.diff(pageStartTime)).asMinutes();
+            if (location.pathname.indexOf("/tablet") == -1 && location.pathname.indexOf("/did") == -1) {
+                if (diff >= 10) {
+                    window.location.href = "/user/logout";
+                }
+            }
+
+        }
+
+        // 단독 처리..
+        function setCheckbox(tag) {
+            $("input[name=list_all]").prop("checked", false);
+            $("input[name=checkitem]").prop("checked", false);
+
+            if (ChkIsNotNull(tag)) {
+                $(tag).closest("tr").find("input[type=checkbox]").prop("checked", true);
+            }
+        }
+    </script>
+      @@include('../layouts/scripts.html')
+
+    <form name="commonForm" id="commonForm" method="post" onsubmit="return false;"></form>
+</body>
+
+</html>
